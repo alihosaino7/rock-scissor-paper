@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock, Scissor, Paper</title>
+</head>
+<body>
+ <div class="container">
+
+   <div class="computer-column column">
+        <h2>Computer</h2>
+        <div class="computer-frame frame" id="computer-frame">
+            <img src="">
+        </div>
+   </div>
+
+   <div class="divider-column">
+        <h1 class="score-board"><span id="computer-score">0</span> - <span id="player-score">0</span></h1>
+        <h1 class="vs">VS</h1>
+        <div class="choices desktop-view" id="choices">
+            <div class="choice" data-choice="rock" data-src="./images/rock.png">
+                <img src="./images/rock.png">
+            </div>
+            <div class="choice" data-choice="paper" data-src="./images/paper.png">
+                <img src="./images/paper.png">
+            </div>
+            <div class="choice" data-choice="scissor" data-src="./images/scissor.png">
+                <img src="./images/scissor.png">
+            </div>
+        </div>
+   </div>
+
+   <div class="player-column column">
+        <h2>You</h2>
+        <div class="player-frame frame" id="player-frame">
+            <img src="">
+        </div>
+        <div class="choices mobile-view" id="choices">
+            <div class="choice" data-choice="rock" data-src="./images/rock.png">
+                <img src="./images/rock.png">
+            </div>
+            <div class="choice" data-choice="paper" data-src="./images/paper.png">
+                <img src="./images/paper.png">
+            </div>
+            <div class="choice" data-choice="scissor" data-src="./images/scissor.png">
+                <img src="./images/scissor.png">
+            </div>
+        </div>
+   </div>
+
+ </div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+
+@font-face {
+    font-family: 'reto';
+    src: url(./Fonts/Reto/debug-font/DebugFreeTrial-MVdYB.otf);
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url(./Fonts/digital/digital-7.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    body { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+}
+
+body {
+    user-select: none;
+    background-color: #001446;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+img {
+    object-fit: cover;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    height: 100%;
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.divider-column {
+    text-align: center;
+    flex-basis: 30%;
+}
+
+@media (max-width: 767px) {
+    .divider-column {
+        width: 100%;
+        flex-basis: auto;
+    }
+    .divider-column .vs {
+        position: relative;
+        width: 100%;
+    }
+    .divider-column .vs::after, .divider-column .vs::before {
+        position: absolute;
+        content: "";
+        background-color: white;
+        width: 40%;
+        height: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .divider-column .vs::after {
+        right: 0;
+    }
+    .divider-column .vs::before {
+        left: 0;
+    }
+    .divider-column .score-board {
+        display: none;
+    }
+}
+
+.column {
+    flex: 1;
+}
+
+@media (max-width: 767px) {
+    .column {
+        width: 100%;
+        flex: auto;
+    }
+}
+
+.vs {
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 20px rgb(103, 207, 255);
+    font-size: 150px;
+    letter-spacing: 10px;
+    font-family: 'reto';
+}
+
+@media (max-width: 991px) {
+    .vs {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .vs {
+        font-size: 80px;
+    }
+}
+
+
+.score-board {
+    color: white;
+    font-family: 'digital';
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .score-board {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .score-board {
+        font-size: 50px;
+    }
+}
+
+.column h2 {
+    color: white;
+    text-shadow: 0 0 20px rgb(103, 207, 255);
+    font-family: 'reto';
+    font-size: 60px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+    .column h2 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 767px) {
+    .column h2 {
+        font-size: 36px;
+    }
+}
+
+.choices {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .choices {
+        margin-top: 0px;
+    }
+}
+
+.choices .choice {
+    background-color: transparent;
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: fit-content;
+    padding: 1rem 0;
+    cursor: pointer;
+    border: 4px solid rgb(103, 207, 255);
+}
+
+.choices .choice:hover {
+    border-color: white;
+    box-shadow: 0 0 20px 0 rgb(103, 207, 255);
+}
+
+.choices .choice img {
+    width: 60%;
+}
+
+.player-column .choices {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .player-column {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .player-column .choices {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .divider-column .choices {
+        display: none;
+    }
+}
+
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    border: 10px solid rgb(48, 169, 224);
+}
+
+@media (max-width: 767px) {
+    .frame {
+        height: 200px;
+        border-width: 6px;
+    }
+}
+
+.frame img {
+    width: 60%;
+}
+
+
+@media (max-width: 767px) {
+    .player-frame {
+        display: none;
+    }
+    .frame img {
+        width: auto;
+        height: 70%;
+    }
+}
