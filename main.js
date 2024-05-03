@@ -1,8 +1,8 @@
 const computerOptionImageEl = document.querySelector("#computer-frame img");
 const playerOptionImageEl = document.querySelector("#player-frame img");
 const playerChoices = document.querySelectorAll("#choices .choice");
-const computerScoreEl = document.querySelector("#computer-score");
-const playerScoreEl = document.querySelector("#player-score");
+const computerScoreEl = document.querySelector("[data-id='computer-score']");
+const playerScoreEl = document.querySelector("[data-id='player-score']");
 
 const images = {
     "rock": "./images/rock.png",
@@ -55,6 +55,7 @@ function checkComputerOption() {
 }
 
 function handlePlayerChoiceClick() {
+    console.log(playerScoreEl)
         const choiseImageSource = this.getAttribute("data-src");
         playerOptionImageEl.src = choiseImageSource
         computerOptionImageEl.src = Object.values(images)[generateRndmNum()]

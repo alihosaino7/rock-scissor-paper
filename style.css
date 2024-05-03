@@ -60,28 +60,8 @@ img {
     .divider-column {
         width: 100%;
         flex-basis: auto;
-    }
-    .divider-column .vs {
-        position: relative;
-        width: 100%;
-    }
-    .divider-column .vs::after, .divider-column .vs::before {
-        position: absolute;
-        content: "";
-        background-color: white;
-        width: 40%;
-        height: 2px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    .divider-column .vs::after {
-        right: 0;
-    }
-    .divider-column .vs::before {
-        left: 0;
-    }
-    .divider-column .score-board {
-        display: none;
+        display: flex;
+        flex-direction: column-reverse;
     }
 }
 
@@ -97,10 +77,12 @@ img {
 }
 
 .vs {
+    position: relative;
+    bottom: 4rem;
     color: white;
     text-align: center;
     text-shadow: 0 0 20px rgb(103, 207, 255);
-    font-size: 150px;
+    font-size: 140px;
     letter-spacing: 10px;
     font-family: 'reto';
 }
@@ -113,16 +95,45 @@ img {
 
 @media (max-width: 767px) {
     .vs {
+        bottom: auto;
         font-size: 80px;
     }
 }
 
-
 .score-board {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    gap: 1rem;
+    justify-content: center;
     color: white;
     font-family: 'digital';
     font-size: 70px;
     margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .score-board {
+        gap: 0rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .score-board {
+        gap: 1rem;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.score-board::before {
+    content: "-";
+    color: white;
+    font-family: 'digital';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
 }
 
 @media (max-width: 991px) {
@@ -135,6 +146,11 @@ img {
     .score-board {
         font-size: 50px;
     }
+
+    .score-board::before {
+        display: none;
+    }
+    
 }
 
 .column h2 {
@@ -199,14 +215,16 @@ img {
 }
 
 @media (max-width: 767px) {
+
     .player-column {
         display: flex;
         flex-direction: column;
-        
     }
+
     .player-column .choices {
         display: flex;
     }
+
 }
 
 @media (max-width: 767px) {
@@ -235,13 +253,15 @@ img {
     width: 60%;
 }
 
-
 @media (max-width: 767px) {
+
     .player-frame {
         display: none;
     }
+
     .frame img {
         width: auto;
         height: 70%;
     }
+
 }
